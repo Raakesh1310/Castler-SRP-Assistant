@@ -15,7 +15,7 @@ mcp = FastMCP(
     stateless_http=True,
     json_response=True,
     host='127.0.0.1',
-    port=8002,
+    port=8101,
     transport_security=TransportSecuritySettings(
         enable_dns_rebinding_protection=True,
         allowed_hosts=[
@@ -31,7 +31,7 @@ mcp = FastMCP(
     ),
 )
 
-API_URL = os.getenv('CASTLER_API_URL', 'http://127.0.0.1:8000').rstrip('/')
+API_URL = os.getenv('CASTLER_API_URL', 'http://127.0.0.1:8100').rstrip('/')
 
 async def call_api(method: str, path: str, payload: dict | None = None) -> dict:
     async with httpx.AsyncClient(timeout=20.0) as client:
