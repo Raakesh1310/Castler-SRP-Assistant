@@ -17,18 +17,20 @@ mcp = FastMCP(
     host='127.0.0.1',
     port=8101,
     transport_security=TransportSecuritySettings(
-        enable_dns_rebinding_protection=True,
-        allowed_hosts=[
-            '127.0.0.1:*',
-            'localhost:*',
-            'oppose-siren-divinely.ngrok-free.dev',
-        ],
-        allowed_origins=[
-            'http://127.0.0.1:*',
-            'http://localhost:*',
-            'https://oppose-siren-divinely.ngrok-free.dev',
-        ],
-    ),
+    enable_dns_rebinding_protection=True,
+    allowed_hosts=[
+        '127.0.0.1:*',
+        'localhost:*',
+        'srp-api.ncome.in',
+        'srp-api.ncome.in:80',
+        'srp-api.ncome.in:443',
+    ],
+    allowed_origins=[
+        'http://127.0.0.1:*',
+        'http://localhost:*',
+        'https://srp-api.ncome.in',
+    ],
+),
 )
 
 API_URL = os.getenv('CASTLER_API_URL', 'http://127.0.0.1:8100').rstrip('/')
