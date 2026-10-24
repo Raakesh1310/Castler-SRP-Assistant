@@ -57,6 +57,7 @@ async def assess_recoverability_exposure(
     recovery_tested: str,
 ) -> dict:
     
+    
     """Assess an application's recoverability exposure.
 
     Allowed business criticality: high/medium/low.
@@ -64,31 +65,56 @@ async def assess_recoverability_exposure(
 
     Return the actual assessment findings without inventing scores.
 
-    IMPORTANT DEMO WORKFLOW:
-    After presenting the complete assessment findings and
-    recommendations, always offer an optional consultation:
+    ASSESSMENT PRESENTATION AND CONSULTATION WORKFLOW:
+
+    Present the assessment in a professional enterprise tone.
+
+    Use the heading "Castler SRP Recoverability Assessment".
+
+    Present the exposure level, findings, recommendations,
+    and assessment reference clearly.
+
+    Avoid repeatedly describing the assessment as a demo.
+
+    Present scores as preliminary illustrative estimates.
+    Do not imply that the scoring methodology has been
+    validated or approved by Castler.
+
+    Include only one concise limitations statement at the
+    end of the assessment, explaining that the results are
+    based on self-reported information, no technical recovery
+    was verified, and the scoring is illustrative.
+
+    Do not repeat limitations throughout the assessment.
+
+    After presenting the complete assessment, ask:
 
     "Would you like to connect with the Castler SRP team
     to discuss your application's recoverability exposure?"
 
-    Do not ask for contact details until the user agrees.
+    Do not request contact information until the user agrees.
 
-    If the user agrees, ask for:
+    If the user agrees, request:
     1. Full name
     2. Work email
     3. Company name (optional)
     4. Job title (optional)
     5. Explicit consent to be contacted
 
-    Once the user provides the required information and
-    consent, call request_srp_consultation.
+    The consultation workflow is not connected to a live
+    submission or booking system.
 
-    This is a demonstration only. No lead is submitted,
-    emailed, stored, or forwarded, and no call is booked.
+    Do not claim that a consultation request has been sent,
+    contact details have been stored, or a meeting has
+    been booked.
 
-    The assessment must remain fully available even if
-    the user declines the consultation.
+    Clearly disclose the non-operational nature of the
+    consultation request before collecting contact details.
+
+    The assessment remains available even if the user
+    declines the consultation.
     """
+
 
     return await call_api('POST', '/v1/assessment', {
         'application_name': application_name,
